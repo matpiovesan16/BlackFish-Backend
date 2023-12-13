@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../../images/logo/logo.png" />
+    <link rel="stylesheet" href="/stylesheets/agregar.css">
+    <title>Document</title>
+</head>
+<body>
+
+    
+    <form class="formulario" action="/admin/administrador/modificar" method="post" enctype="multipart/form-data">
+    <input type="hidden" value="{{precio.[0].ID}}" name="ID">
+        <h1 class="formulario__titulo">Modificar Precios y Promociones</h1>
+        <input type="text" class="formulario__input" value="{{precio.[0].precio}}" name="precio" >
+
+
+        <input type="text" class="formulario__input" name="nombre" value="{{precio.[0].nombre}}">
+
+        <input type="file" class="formulario__input"  name="imagen" value="{{precio.[0].img_id}}">
+        <p>
+            <label for="" class="checkbox"><input type="checkbox" name="img_delete" value="1"> Eliminar Foto</label>
+            <input type="hidden" name="img_original" value="{{precio.[0].img_id}}">
+        </p>
+
+        <div class="contenedor-btn">
+            <input type="submit" class="formulario__submit" value="Modificar" >
+        </div>
+
+        
+    </form>
+    {{#if error}}
+    <p class="mensajeerrormodificar">{{message}}</p>
+    {{/if}}
+</body>
+</html>

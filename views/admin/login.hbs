@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/form.css">
+    <title>Document</title>
+</head>
+<body>
+
+        <form class="formulario" action="/admin/login" method="post">
+        <h1 class="formulario__titulo">Ingresa tus datos</h1>
+        <input type="text" class="formulario__input" id="inputUser" name="usuario"  >
+        <label for="" class="formulario__label">Usuario</label>
+
+
+        <input type="password" class="formulario__input" id="inputPassword" name="password">
+        <label for="" class="formulario__label">Password</label>
+
+
+        <div class="container_btn">  <input type="submit" class="formulario__submit" value="Ingresar"></div>
+
+
+  
+
+      
+    </form>
+    {{#if error}}
+    <p class="login">Usuario y/o contraseña incorrecto</p>
+    {{/if}}
+
+    <script src="/javascripts/form.js"></script>
+    
+</body>
+</html>
+    
+    
+    

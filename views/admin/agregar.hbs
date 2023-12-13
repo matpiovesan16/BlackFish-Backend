@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../stylesheets/agregar.css">
+    <title>Document</title>
+</head>
+<body>
+
+    
+    <form class="formulario" action="/admin/administrador/agregar" method="post" enctype="multipart/form-data">
+        <h1 class="formulario__titulo">Agregar un nuevo precio</h1>
+        <input type="text" class="formulario__input" name="precio">
+        <label for="" class="formulario__label">Precio</label>
+
+
+        <input type="text" class="formulario__input" name="nombre">
+        <label for="" class="formulario__label">Nombre</label>
+
+
+         <input type="file" class="formulario__input"  name="imagen" placeholder="foto">
+
+         <div class="contenedor-btn">
+            <input type="submit" class="formulario__submit" value="Guardar" >
+         </div>
+
+        
+    </form>
+    {{#if error}}
+    <p class="mensajeerroragregar">{{message}}</p>
+    {{/if}}
+
+    <script src="/javascripts/form.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,46 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <title></title>
+  </head>
+  <body>
+    <div class="container_titulo">
+      <h1>Administracion base de datos</h1>
+    </div>
+    <div class="container_logout">
+      <p>Bienvenido {{usuario}}</p>
+      <a href="/admin/login/logout" class="btn__logout">Cerrar Sesion
+        <i class="fas fa-sign-out-alt"></i></a>
+    </div>
+    <div class="container__administrador">
+      <h1>Precios Promociones </h1>
+      <a href="/admin/administrador/agregar" class="btn__nuevo"><i class="fa fa-plus"></i> Nuevo</a>
+    </div>
+    <div class="container__table">
+      <table>
+        <thead>
+          <tr>
+            <th>Precio</th>
+            <th>Foto</th>
+            <th>Nombre</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+            {{#each precios }}
+          <tr>
+            <td>{{precio}}</td>
+            <td>{{{imagen}}}</td>
+            <td>{{nombre}}</td>
+            <td><button class="btn-borrar"><a href="/admin/administrador/eliminar/{{ID}}"><i class="fa-sharp fa-solid fa-trash"></i> Borrar</a></button> <button class="btn-modificar"><a href="/admin/administrador/modificar/{{ID}}"><i class="fa-sharp fa-solid fa-pen"></i> Modificar</a></button></td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+
+  </body>
+</html>
